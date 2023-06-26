@@ -23,6 +23,7 @@ namespace LocalizationResourcesTest
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowVM();
         }
     }
 }
