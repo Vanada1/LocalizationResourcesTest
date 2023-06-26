@@ -13,5 +13,11 @@ namespace LocalizationResourcesTest
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var dataContext = new MainWindowVM();
+            var mainWindow = new MainWindow(dataContext);
+            mainWindow.Show();
+        }
     }
 }

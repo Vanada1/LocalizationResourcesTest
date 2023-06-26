@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.IO;
 using CommunityToolkit.Mvvm.ComponentModel;
+using LocalizationResourcesTest.Properties;
 using Resources = LocalizationResourcesTest.Properties.VMResources.MainWindow;
 
 namespace LocalizationResourcesTest
@@ -17,6 +20,12 @@ namespace LocalizationResourcesTest
         private readonly string _defaultCultureName;
 
         /// <summary>
+        /// Путь до папки с настройками.
+        /// </summary>
+        private readonly string _directory =
+            $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\TestSettings";
+
+        /// <summary>
         /// Выбранная культура.
         /// </summary>
         private string _selectedCulture;
@@ -25,6 +34,11 @@ namespace LocalizationResourcesTest
         /// Коллекция культур.
         /// </summary>
         private Dictionary<string, string> _cultures;
+
+        /// <summary>
+        /// Событие изменения культуры.
+        /// </summary>
+        public event EventHandler UpdatedCulture;
 
         /// <summary>
         /// Создание VM главного окна.
@@ -40,8 +54,11 @@ namespace LocalizationResourcesTest
                 ["de"] = Resources.DeCulture,
                 ["zh"] = Resources.ZhCulture
             };
-            SelectedCulture = _defaultCultureName;
+
+            SelectedCulture = File.Exists(FilePath) ? File.ReadAllText(FilePath) : _defaultCultureName;
         }
+
+        public string FilePath => $"{_directory}\\Settings.txt";
 
         /// <summary>
         /// Коллекция культур.
@@ -92,6 +109,14 @@ namespace LocalizationResourcesTest
             };
 
             Cultures = newCultureNames;
+            UpdatedCulture?.Invoke(this, EventArgs.Empty);
+
+            if (!Directory.Exists(_directory))
+            {
+                Directory.CreateDirectory(_directory);
+            }
+
+            File.WriteAllText(FilePath, SelectedCulture);
         }
     }
 }

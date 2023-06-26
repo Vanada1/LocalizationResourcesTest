@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,10 @@ namespace LocalizationResourcesTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowVM dataContext)
         {
             InitializeComponent();
-            DataContext = new MainWindowVM();
+            DataContext = dataContext;
         }
     }
 }
