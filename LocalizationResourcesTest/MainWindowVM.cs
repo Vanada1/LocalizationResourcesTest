@@ -121,10 +121,6 @@ namespace LocalizationResourcesTest
             + @"LocalizationResourcesTest\LoadingProjectTest\bin\Debug\"
             + @"LoadingProjectTest.dll";
 
-        private string DllPath1 =>
-            @"C:\Users\vss.EVEREST\Source\Repos\Vanada1\LocalizationResourcesTest\" + 
-            @"LoadingProjectTest\bin\Debug\ru\LoadingProjectTest.resources.dll";
-
         /// <summary>
         /// Обновляет культуру.
         /// </summary>
