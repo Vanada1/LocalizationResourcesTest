@@ -61,6 +61,24 @@ namespace LocalizationResourcesTest.Properties.ViewResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Entered Value = {0}.
+        /// </summary>
+        public static string EnteredValue {
+            get {
+                return ResourceManager.GetString("EnteredValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Value:.
+        /// </summary>
+        public static string EnterValue {
+            get {
+                return ResourceManager.GetString("EnterValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap flag {

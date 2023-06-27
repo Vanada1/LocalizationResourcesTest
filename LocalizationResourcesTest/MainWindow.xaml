@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -43,6 +43,25 @@
                 SelectedValue="{Binding SelectedCulture}"
                 SelectedValuePath="Key"/>
             <Image Width="40" Source="{Binding Source={x:Static ui:MainWindow.flag}, Converter={StaticResource BitmapToImageSourceConverter}}"/>
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Margin="10 10"
+            Orientation="Vertical">
+            <TextBlock
+                Margin="0 0 10 0"
+                VerticalAlignment="Center"
+                Text="{x:Static ui:MainWindow.EnterValue}"/>
+            <TextBox
+                Width="100"
+                Margin="0 0 10 0"
+                VerticalAlignment="Center"
+                Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock
+                Margin="0 0 10 0"
+                VerticalAlignment="Center"
+                Text="{Binding StringFormat={x:Static ui:MainWindow.EnteredValue}, Path=Value}"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -124,4 +124,10 @@
   <data name="SelectLanguageText" xml:space="preserve">
     <value>Выберите Язык:</value>
   </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Введите значение:</value>
+  </data>
+  <data name="EnteredValue" xml:space="preserve">
+    <value>Введенное значение = {0}</value>
+  </data>
 </root>

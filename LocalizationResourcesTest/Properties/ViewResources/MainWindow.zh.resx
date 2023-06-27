@@ -124,4 +124,10 @@
   <data name="SelectLanguageText" xml:space="preserve">
     <value>选择语言:</value>
   </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>输入值:</value>
+  </data>
+  <data name="EnteredValue" xml:space="preserve">
+    <value>输入的值 = {0}</value>
+  </data>
 </root>

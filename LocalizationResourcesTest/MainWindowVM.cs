@@ -36,6 +36,11 @@ namespace LocalizationResourcesTest
         private Dictionary<string, string> _cultures;
 
         /// <summary>
+        /// Строковое значение.
+        /// </summary>
+        private string _value;
+
+        /// <summary>
         /// Событие изменения культуры.
         /// </summary>
         public event EventHandler UpdatedCulture;
@@ -87,6 +92,15 @@ namespace LocalizationResourcesTest
                     UpdateCulture();
                 }
             }
+        }
+
+        /// <summary>
+        /// Строковое значение.
+        /// </summary>
+        public string Value
+        {
+            get => _value;
+            set => SetProperty(ref _value, value);
         }
 
         /// <summary>

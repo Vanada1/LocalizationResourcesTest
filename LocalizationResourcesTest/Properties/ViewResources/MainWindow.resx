@@ -125,4 +125,10 @@
     <value>Select Language:</value>
     <comment>Сообщение выбора языка</comment>
   </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Enter Value:</value>
+  </data>
+  <data name="EnteredValue" xml:space="preserve">
+    <value>Entered Value = {0}</value>
+  </data>
 </root>
