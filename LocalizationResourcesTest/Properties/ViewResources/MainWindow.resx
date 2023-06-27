@@ -123,5 +123,6 @@
   </data>
   <data name="SelectLanguageText" xml:space="preserve">
     <value>Select Language:</value>
+    <comment>Сообщение выбора языка</comment>
   </data>
 </root>

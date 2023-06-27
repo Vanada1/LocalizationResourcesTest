@@ -127,7 +127,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\VMResources\MainWindow.de.resx" />
+    <EmbeddedResource Include="Properties\VMResources\MainWindow.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\VMResources\MainWindow.en.resx" />
     <EmbeddedResource Include="Properties\VMResources\MainWindow.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
