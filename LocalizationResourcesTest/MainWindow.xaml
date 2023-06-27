@@ -63,5 +63,10 @@
                 VerticalAlignment="Center"
                 Text="{Binding StringFormat={x:Static ui:MainWindow.EnteredValue}, Path=Value}"/>
         </StackPanel>
+
+        <TextBlock
+            Grid.Row="2"
+            Margin="10"
+            Text="{Binding MyName}"/>
     </Grid>
 </Window>

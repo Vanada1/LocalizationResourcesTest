@@ -163,7 +163,10 @@
     <Resource Include="Flags\zh_flag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\NewFolder1\" />
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{d16432fa-b705-474c-8081-63aec3a76c64}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\CommunityToolkit.Mvvm.8.2.0\build\netstandard2.0\CommunityToolkit.Mvvm.targets" Condition="Exists('..\packages\CommunityToolkit.Mvvm.8.2.0\build\netstandard2.0\CommunityToolkit.Mvvm.targets')" />

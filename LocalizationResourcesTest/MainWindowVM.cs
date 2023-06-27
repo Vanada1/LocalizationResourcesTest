@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Core;
 using LocalizationResourcesTest.Properties;
 using Resources = LocalizationResourcesTest.Properties.VMResources.MainWindow;
 
@@ -61,6 +64,11 @@ namespace LocalizationResourcesTest
             };
 
             SelectedCulture = File.Exists(FilePath) ? File.ReadAllText(FilePath) : _defaultCultureName;
+
+            var dll = Assembly.LoadFrom(DllPath);
+            var type = dll.GetType("LoadingProjectTest.TestClass");
+            var obj = (IInterface)Activator.CreateInstance(type);
+            MyName = obj.Name;
         }
 
         public string FilePath => $"{_directory}\\Settings.txt";
@@ -102,6 +110,20 @@ namespace LocalizationResourcesTest
             get => _value;
             set => SetProperty(ref _value, value);
         }
+
+        /// <summary>
+        /// Мое имя.
+        /// </summary>
+        public string MyName { get; }
+
+        private string DllPath =>
+            @"C:\Users\vss.EVEREST\Source\Repos\Vanada1\"
+            + @"LocalizationResourcesTest\LoadingProjectTest\bin\Debug\"
+            + @"LoadingProjectTest.dll";
+
+        private string DllPath1 =>
+            @"C:\Users\vss.EVEREST\Source\Repos\Vanada1\LocalizationResourcesTest\" + 
+            @"LoadingProjectTest\bin\Debug\ru\LoadingProjectTest.resources.dll";
 
         /// <summary>
         /// Обновляет культуру.
