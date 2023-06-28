@@ -117,9 +117,7 @@ namespace LocalizationResourcesTest
         public string MyName { get; }
 
         private string DllPath =>
-            @"C:\Users\vss.EVEREST\Source\Repos\Vanada1\"
-            + @"LocalizationResourcesTest\LoadingProjectTest\bin\Debug\"
-            + @"LoadingProjectTest.dll";
+            @"C:\Users\vovas\source\repos\LocalizationResourcesTest\LoadingProjectTest\bin\Debug\LoadingProjectTest.dll";
 
         /// <summary>
         /// Обновляет культуру.
@@ -127,7 +125,6 @@ namespace LocalizationResourcesTest
         private void UpdateCulture()
         {
             var newCultureInfo = new CultureInfo(SelectedCulture);
-            CultureInfo.DefaultThreadCurrentCulture = newCultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = newCultureInfo;
             Resources.Culture = newCultureInfo;
 
