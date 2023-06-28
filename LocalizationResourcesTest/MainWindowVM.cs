@@ -65,6 +65,7 @@ namespace LocalizationResourcesTest
 
             SelectedCulture = File.Exists(FilePath) ? File.ReadAllText(FilePath) : _defaultCultureName;
 
+            // TODO: Использзуется абсолютный путь у DllPath. Поменять на свой
             var dll = Assembly.LoadFrom(DllPath);
             var type = dll.GetType("LoadingProjectTest.TestClass");
             var obj = (IInterface)Activator.CreateInstance(type);
@@ -116,6 +117,7 @@ namespace LocalizationResourcesTest
         /// </summary>
         public string MyName { get; }
 
+        // TODO: Тут использзуется абсолютный путь. Поменять на свой
         private string DllPath =>
             @"C:\Users\vovas\source\repos\LocalizationResourcesTest\LoadingProjectTest\bin\Debug\LoadingProjectTest.dll";
 
